@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/PR–3.CONVERT HTML.TO NODE_JS./recipe/style.css">
+    <title>Add Recipe</title>
+</head>
+
+<body>
+    <h1>Add a New Recipe</h1>
+    <form id="recipeForm">
+        <input type="text" name="name" placeholder="Recipe Name" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="text" name="preparationTime" placeholder="Preparation Time" required>
+        <input type="text" name="cookingTime" placeholder="Cooking Time" required>
+        <input type="text" name="imageUrl" placeholder="Image URL" required>
+        <input type="text" name="country" placeholder="Country" required>
+        <select name="veg" required>
+            <option value="true">Vegetarian</option>
+            <option value="false">Non-Vegetarian</option>
+        </select>
+        <button type="submit">Add Recipe</button>
+    </form>
+    <script>
+        document.getElementById('recipeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch('/recipe/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Recipe added successfully!');
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/PR–3.CONVERT HTML.TO NODE_JS./recipe/style.css">
+    <title>Recipe API</title>
+</head>
+
+<body>
+    <h1>Recipe List</h1>
+    <div id="parent"></div>
+    <script>
+        fetch('/recipe/all')
+              (response => response.json())
+            (data => {
+                const parentDiv = document.getElementById('parent');
+                data.forEach(recipe => {
+                    const recipeDiv = document.createElement('div');
+                    recipeDiv.innerHTML = `<h2>${recipe.name}</h2><p>${recipe.description}</p><img src="${recipe.imageUrl}" alt="${recipe.name}" style="width: 200px;">`;
+                    parentDiv.appendChild(recipeDiv);
+                });
+            });
+    </script>
+</body>
+
+</html>
