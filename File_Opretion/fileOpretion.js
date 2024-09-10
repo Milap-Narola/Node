@@ -1,13 +1,13 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const bodyParser = require('body-parser');
+
 
 const app = express();
 const PORT = 8000;
 
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 
 app.post('/file/create', (req, res) => {
