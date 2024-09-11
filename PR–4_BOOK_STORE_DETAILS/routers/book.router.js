@@ -1,4 +1,3 @@
-// routes/bookRoutes.js
 const express = require('express');
 const router = express.Router();
 const { getAllBooks, getBookById, addBook, updateBook, deleteBook, filterBooks } = require('../controllers/book.controller');
