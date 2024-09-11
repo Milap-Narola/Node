@@ -1,4 +1,3 @@
-// validators/book.validation.js
 const validateBook = (req, res, next) => {
     const { title, author, category, publicationYear, price, quantity, description, imageUrl } = req.body;
 
