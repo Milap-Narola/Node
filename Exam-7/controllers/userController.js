@@ -18,10 +18,6 @@ const createUser = async (req, res) => {
 
   if (req.files) {
     profile = req.files.map((ele) => ele.path)
-
-    // for (let i = 0; i < req.files.length; i++) {
-    //   profile.push(req.files[i].path);
-    // }
   }
 
 

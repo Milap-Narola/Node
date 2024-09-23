@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="/public/css/login.css">
 </head>
 <body>
     <% include navbar.ejs %>
@@ -16,5 +17,25 @@
             <input type="submit" value="Login">
         </form>
 </body>
+<script>
+document.getElementById("loginForm").onsubmit = async function(event) {
+    event.preventDefault(); 
+    
+    const formData = new FormData(this); 
+    const response = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(formData)), 
+    });
+
+    if(response.ok) {
+        alert("Login successful!");
+        window.location.href='/'; 
+    } else {
+        alert("Login failed!");
+    }
+};
+</script>
+
 
 </html>

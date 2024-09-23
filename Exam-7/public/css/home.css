@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    color: #333;
+}
+
+.users {
+    margin-top: 20px;
+}
+
+.users h1 {
+    margin-bottom: 10px;
+}
+
+.users img {
+    width: 100px;
+    height: auto;
+}

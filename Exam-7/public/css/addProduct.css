@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:#f4f4f4;
+    padding:.5em;
+ }
+ 
+ form {
+    background-color:white; 
+    padding:.5em;
+    border-radius:.25em; 
+    box-shadow:.2em .2em .5em rgba(0,0,0,.2);
+    max-width:400px; 
+    margin:auto;
+ }
+ 
+ h1 {
+    text-align:center; 
+ }
+ 
+ label {
+    display:block;
+    margin-bottom:.25em; 
+ }
+ 
+ input[type="text"],
+ input[type="number"],
+ textarea,
+ input[type="file"] {
+    width:calc(100% - .5em);
+    padding:.5em; 
+    margin-bottom:.75em; 
+    border-radius:.25em; 
+    border:.5px solid #ccc;
+ }
+ 
+ input[type="submit"] {
+    background-color:#007bff; 
+    padding:.75em;
+    cursor:pointer; 
+ }
+ 
+ input[type="submit"]:hover {
+    background-color:#0056b3; 
+ }

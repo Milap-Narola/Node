@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Sign Up</title>
+  <link rel="stylesheet" href="/public/css/signup.css">
 </head>
 <body>
   <% include navbar.ejs %>
@@ -22,4 +23,22 @@
     <input type="submit" value="Sign Up">
   </form>
 </body>
+<script>
+document.getElementById("signupForm").onsubmit = async function(event) {
+    event.preventDefault(); 
+
+    const formData = new FormData(this); 
+    const response = await fetch("/signup", { 
+        method: "POST",
+        body: formData,
+    });
+
+    if(response.ok) {
+        alert("Signup successful!");
+        window.location.href='/login'; 
+    } else {
+        alert("Signup failed!");
+    }
+};
+</script>
 </html>

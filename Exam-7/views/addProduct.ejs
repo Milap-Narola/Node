@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Product</title>
+  <link rel="stylesheet" href="/public/css/addProduct.css">
 </head>
 
 <body>
@@ -23,5 +24,27 @@
       <input type="submit" value="Add Product">
     </form>
 </body>
+<script>
+
+  document.getElementById("addProductForm").onsubmit = async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    const response = await fetch("/add-product", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (response.ok) {
+      alert("Product added successfully!");
+      window.location.href = '/';
+    } else {
+      alert("Failed to add product!");
+    }
+  };
+
+</script>
+
 
 </html>
