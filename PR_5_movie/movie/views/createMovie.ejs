@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Create Movie</title>
+     <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+     <h1>Add a New Movie</h1>
+
+     <!-- Form to create a new movie -->
+     <form action="/movie/create" method="POST" enctype="multipart/form-data">
+         <input type="text" name="title" placeholder="Title" required />
+         <input type="text" name="description" placeholder="Description" />
+         <input type="date" name="releaseDate" />
+         <input type="text" name="category" placeholder="Category" />
+         <input type="text" name="actors" placeholder='Actors (comma-separated)' />
+         <input type="file" name="image" accept=".jpg,.jpeg,.png,.gif"/>
+         <!-- Add more fields as necessary -->
+         <button type="submit">Add Movie</button>
+     </form>
+
+     <!-- Link back to home -->
+     <a href="/">Back to Home</a>
+
+</body>
+</html>

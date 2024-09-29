@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Movies List</title>
+     <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+
+<h1>Movies List</h1>
+
+<table border='1'>
+<tr><th>Title</th><th>Description</th><th>Release Date</th><th>Category</th><th>Actors</th><th>Image</th></tr>
+
+<% movies.forEach(movie => { %> 
+<tr> 
+<td><%= movie.title %></td> 
+<td><%= movie.description %></td> 
+<td><%= movie.releaseDate.toDateString() %></td> 
+<td><%= movie.category %></td> 
+<td><%= movie.actors.map(actor => actor.name).join(', ') %></td> 
+<td><img src="<%= movie.image %>" alt="<%= movie.title %>" width='100'/></td> 
+</tr> 
+<% }) %>
+
+ </table>
+
+<!-- Link back to home -->
+<a href="/">Back to Home</a>
+
+ </body> 
+ </html> 
